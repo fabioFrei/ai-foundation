@@ -5,7 +5,7 @@ The "AI Foundation Prototype" simulates the operational framework of a grantmaki
 
 ## Setup and Installation
 1. **Clone the repository:**
-git clone https://github.com/yourusername/AI-Foundation-Prototype.git
+git clone https://github.com/fabioFrei/ai-foundation.git
 2. **Install necessary libraries:**
 pip install crewai
 3. **Set up environment variables:**
