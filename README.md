@@ -13,7 +13,7 @@ Ensure you have the necessary API keys and variables configured in your environm
 export OPENAI_API_KEY='your_peakprivacy_api_key'
 export OPENAI_MODEL_NAME='llama3-swiss'
 export SERPER_API_KEY = 'serper_API_KEY'
-export OPENAI_API_BASE = 'https://api.peackprivacy.fhlb.ch/v1/ai'
+export OPENAI_API_BASE = 'https://api.peakprivacy.ch/v1/ai'
 
 Note: To obtain the PeakPrivacy API key, visit [peakprivacy.ch](https://peakprivacy.ch) and follow their instructions for API access.
 
