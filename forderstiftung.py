@@ -1,17 +1,12 @@
 import os
 from crewai import Crew, Process
 from crewai import Task
-
-os.environ["SERPER_API_KEY"] = "empty"  # serper.dev API key
-os.environ["OPENAI_API_KEY"] = "empty"
-os.environ["OPENAI_MODEL_NAME"] = "gpt-4-turbo"
-
 from crewai import Agent
 from crewai_tools import SerperDevTool, WebsiteSearchTool
 search_tool = SerperDevTool()
 
 #enter the website of a foundation website that contains deatils about grant making criteria
-ws_tool = WebsiteSearchTool(website='The website for grantmaking criteria')
+ws_tool = WebsiteSearchTool(website='https://www.stiftung-mercator.de/de/wie-wir-foerdern/informationen-fuer-antragstellende/foerderkriterien/')
 
 # Creating a senior researcher agent with memory and verbose mode
 leadership = Agent(
@@ -128,7 +123,13 @@ crew = Crew(
   memory=True,
   cache=True,
   max_rpm=100,
-  share_crew=True
+  share_crew=True,
+  embedder={
+    "provider": "huggingface",
+    "config": {
+      "model": "mixedbread-ai/mxbai-embed-large-v1",  # https://huggingface.co/mixedbread-ai/mxbai-embed-large-v1
+    }
+  }
 )
 
 # Starting the task execution process with enhanced feedback
